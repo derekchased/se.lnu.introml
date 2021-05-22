@@ -1,8 +1,15 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun May  3 12:37:53 2020
+
+@author: derek
+"""
 
 from sklearn.model_selection import GridSearchCV
-
 import numpy as np
 
+# Regrssion using GridSearchCV
 def grid_search_SVC(X, y, cclass, cv, params,refit=True,print_score=True):   
     if print_score:
         print("grid_search_SVC",params)
@@ -42,3 +49,15 @@ def normalize_mnist_data(X):
     range_val = max_val - min_val
     return np.divide(X,range_val)
 
+"""
+def print_gscv(gscv):
+    bc = gscv.cv_results_
+    be = gscv.best_estimator_
+    bs = gscv.best_score_
+    bp = gscv.best_params_
+    bi = gscv.best_index_
+    bss = gscv.scorer_
+    bn = gscv.n_splits_
+    br = gscv.refit_time_
+    print(bc,be,bs,bp,bi,bss,bn,br)
+"""
